@@ -23,5 +23,7 @@ public interface RoomService extends SuperService{
     public String deleteRoom(String roomId) throws Exception;
 
     RoomDto getRoom(String roomId) throws Exception;
+
+    public List<RoomDto> getRoomsFromSpecificCategory(String category);
     
 }

@@ -40,5 +40,9 @@ public class RoomCatogoryController {
     public List<RoomCatogoryDto> getRoomCatogory()throws Exception {
         return roomCatogoryService.getAllRoomCatogory();
     }
+
+    public List<RoomCatogoryDto> loadCategory() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
     
 }

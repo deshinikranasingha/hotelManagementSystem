@@ -12,161 +12,79 @@ import java.util.Date;
  */
 public class ReservationEntity {
     
-    private String reservationId;
-    private String customerId;
-    private String roomCatogory;
-    private String roomNumber;
-    private boolean fullBoard;
-    private boolean halfBoard;
-    private boolean breadAndBreakfast;
-    private Date arrivalDate;
-    private Date departureDate;
+    private String resID;
+    private Date date;
+    private Double totalPrice;
+    private Integer custID;
 
     public ReservationEntity() {
     }
 
-    public ReservationEntity(String reservationId, String customerId, String roomCatogory, String roomNumber, boolean fullBoard, boolean halfBoard, boolean breadAndBreakfast, Date arrivalDate, Date departureDate) {
-        this.reservationId = reservationId;
-        this.customerId = customerId;
-        this.roomCatogory = roomCatogory;
-        this.roomNumber = roomNumber;
-        this.fullBoard = fullBoard;
-        this.halfBoard = halfBoard;
-        this.breadAndBreakfast = breadAndBreakfast;
-        this.arrivalDate = arrivalDate;
-        this.departureDate = departureDate;
+    public ReservationEntity(String resID, Date date, Double totalPrice, Integer custID) {
+        this.resID = resID;
+        this.date = date;
+        this.totalPrice = totalPrice;
+        this.custID = custID;
     }
 
     /**
-     * @return the reservationId
+     * @return the resID
      */
-    public String getReservationId() {
-        return reservationId;
+    public String getResID() {
+        return resID;
     }
 
     /**
-     * @param reservationId the reservationId to set
+     * @param resID the resID to set
      */
-    public void setReservationId(String reservationId) {
-        this.reservationId = reservationId;
+    public void setResID(String resID) {
+        this.resID = resID;
     }
 
     /**
-     * @return the customerId
+     * @return the date
      */
-    public String getCustomerId() {
-        return customerId;
+    public Date getDate() {
+        return date;
     }
 
     /**
-     * @param customerId the customerId to set
+     * @param date the date to set
      */
-    public void setCustomerId(String customerId) {
-        this.customerId = customerId;
+    public void setDate(Date date) {
+        this.date = date;
     }
 
     /**
-     * @return the roomCatogory
+     * @return the totalPrice
      */
-    public String getRoomCatogory() {
-        return roomCatogory;
+    public Double getTotalPrice() {
+        return totalPrice;
     }
 
     /**
-     * @param roomCatogory the roomCatogory to set
+     * @param totalPrice the totalPrice to set
      */
-    public void setRoomCatogory(String roomCatogory) {
-        this.roomCatogory = roomCatogory;
+    public void setTotalPrice(Double totalPrice) {
+        this.totalPrice = totalPrice;
     }
 
     /**
-     * @return the roomNumber
+     * @return the custID
      */
-    public String getRoomNumber() {
-        return roomNumber;
+    public Integer getCustID() {
+        return custID;
     }
 
     /**
-     * @param roomNumber the roomNumber to set
+     * @param custID the custID to set
      */
-    public void setRoomNumber(String roomNumber) {
-        this.roomNumber = roomNumber;
-    }
-
-    /**
-     * @return the fullBoard
-     */
-    public boolean isFullBoard() {
-        return fullBoard;
-    }
-
-    /**
-     * @param fullBoard the fullBoard to set
-     */
-    public void setFullBoard(boolean fullBoard) {
-        this.fullBoard = fullBoard;
-    }
-
-    /**
-     * @return the halfBoard
-     */
-    public boolean isHalfBoard() {
-        return halfBoard;
-    }
-
-    /**
-     * @param halfBoard the halfBoard to set
-     */
-    public void setHalfBoard(boolean halfBoard) {
-        this.halfBoard = halfBoard;
-    }
-
-    /**
-     * @return the breadAndBreakfast
-     */
-    public boolean isBreadAndBreakfast() {
-        return breadAndBreakfast;
-    }
-
-    /**
-     * @param breadAndBreakfast the breadAndBreakfast to set
-     */
-    public void setBreadAndBreakfast(boolean breadAndBreakfast) {
-        this.breadAndBreakfast = breadAndBreakfast;
-    }
-
-    /**
-     * @return the arrivalDate
-     */
-    public Date getArrivalDate() {
-        return arrivalDate;
-    }
-
-    /**
-     * @param arrivalDate the arrivalDate to set
-     */
-    public void setArrivalDate(Date arrivalDate) {
-        this.arrivalDate = arrivalDate;
-    }
-
-    /**
-     * @return the departureDate
-     */
-    public Date getDepartureDate() {
-        return departureDate;
-    }
-
-    /**
-     * @param departureDate the departureDate to set
-     */
-    public void setDepartureDate(Date departureDate) {
-        this.departureDate = departureDate;
+    public void setCustID(Integer custID) {
+        this.custID = custID;
     }
 
     @Override
     public String toString() {
-        return "ReservationEntity{" + "reservationId=" + reservationId + ", customerId=" + customerId + ", roomCatogory=" + roomCatogory + ", roomNumber=" + roomNumber + ", fullBoard=" + fullBoard + ", halfBoard=" + halfBoard + ", breadAndBreakfast=" + breadAndBreakfast + ", arrivalDate=" + arrivalDate + ", departureDate=" + departureDate + '}';
+        return "ReservationEntity{" + "resID=" + resID + ", date=" + date + ", totalPrice=" + totalPrice + ", custID=" + custID + '}';
     }
-
-    
 }

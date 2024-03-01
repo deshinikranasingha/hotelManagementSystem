@@ -4,6 +4,7 @@
  */
 package hotel.management.service.custom;
 
+import hotel.management.dto.ReservationDetailsDto;
 import hotel.management.dto.ReservationDto;
 import hotel.management.service.SuperService;
 import java.util.List;
@@ -21,5 +22,13 @@ public interface ReservationService extends SuperService{
     public String cancleReservation(String reservationId) throws Exception;
 
     public ReservationDto getReservation(String reservationId)throws Exception;
+
+    public double getPrice(long numOfDays, String roomType, String packageType);
+
+    public String saveReservation(ReservationDto reservationDto);
+
+    public boolean roomAvailablity(ReservationDetailsDto reservationDetailsDto);
+
+    public String deleteReservation(String resId, String roomId);
     
 }

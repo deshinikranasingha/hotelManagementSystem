@@ -6,6 +6,7 @@ package hotel.management.service.custom.impl;
 
 import hotel.management.dao.DaoFactory;
 import hotel.management.dao.custom.ReservationDao;
+import hotel.management.dto.ReservationDetailsDto;
 import hotel.management.dto.ReservationDto;
 import hotel.management.entity.ReservationEntity;
 import hotel.management.service.custom.ReservationService;
@@ -83,6 +84,26 @@ public class ReservationServiceImpl implements ReservationService{
                     entity.getDepartureDate());
         }
         return null;
+    }
+
+    @Override
+    public double getPrice(long numOfDays, String roomType, String packageType) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    @Override
+    public String saveReservation(ReservationDto reservationDto) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    @Override
+    public boolean roomAvailablity(ReservationDetailsDto reservationDetailsDto) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    @Override
+    public String deleteReservation(String resId, String roomId) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
 }

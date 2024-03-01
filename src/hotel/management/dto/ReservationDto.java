@@ -5,6 +5,7 @@
 package hotel.management.dto;
 
 import java.util.Date;
+import java.util.List;
 
 /**
  *
@@ -14,27 +15,17 @@ public class ReservationDto {
     
     private String reservationId;
     private String customerId;
-    private String romCatogory;
-    private String roomNumber;
-    private boolean fullBoard;
-    private boolean halfBoard;
-    private boolean breadAndBreakfast;
-    private Date arrivalDate;
-    private Date departureDate;
+    private Date date;
+    private List<ReservationDetailsDto> reservationDetailsList;
 
     public ReservationDto() {
     }
 
-    public ReservationDto(String reservationId, String customerId, String romCatogory, String roomNumber, boolean fullBoard, boolean halfBoard, boolean breadAndBreakfast, Date arrivalDate, Date departureDate) {
+    public ReservationDto(String reservationId, String customerId, Date date, List<ReservationDetailsDto> reservationDetailsList) {
         this.reservationId = reservationId;
         this.customerId = customerId;
-        this.romCatogory = romCatogory;
-        this.roomNumber = roomNumber;
-        this.fullBoard = fullBoard;
-        this.halfBoard = halfBoard;
-        this.breadAndBreakfast = breadAndBreakfast;
-        this.arrivalDate = arrivalDate;
-        this.departureDate = departureDate;
+        this.date = date;
+        this.reservationDetailsList = reservationDetailsList;
     }
 
     /**
@@ -66,105 +57,35 @@ public class ReservationDto {
     }
 
     /**
-     * @return the romCatogory
+     * @return the date
      */
-    public String getRomCatogory() {
-        return romCatogory;
+    public Date getDate() {
+        return date;
     }
 
     /**
-     * @param romCatogory the romCatogory to set
+     * @param date the date to set
      */
-    public void setRomCatogory(String romCatogory) {
-        this.romCatogory = romCatogory;
+    public void setDate(Date date) {
+        this.date = date;
     }
 
     /**
-     * @return the roomNumber
+     * @return the reservationDetailsList
      */
-    public String getRoomNumber() {
-        return roomNumber;
+    public List<ReservationDetailsDto> getReservationDetailsList() {
+        return reservationDetailsList;
     }
 
     /**
-     * @param roomNumber the roomNumber to set
+     * @param reservationDetailsList the reservationDetailsList to set
      */
-    public void setRoomNumber(String roomNumber) {
-        this.roomNumber = roomNumber;
-    }
-
-    /**
-     * @return the fullBoard
-     */
-    public boolean isFullBoard() {
-        return fullBoard;
-    }
-
-    /**
-     * @param fullBoard the fullBoard to set
-     */
-    public void setFullBoard(boolean fullBoard) {
-        this.fullBoard = fullBoard;
-    }
-
-    /**
-     * @return the halfBoard
-     */
-    public boolean isHalfBoard() {
-        return halfBoard;
-    }
-
-    /**
-     * @param halfBoard the halfBoard to set
-     */
-    public void setHalfBoard(boolean halfBoard) {
-        this.halfBoard = halfBoard;
-    }
-
-    /**
-     * @return the breadAndBreakfast
-     */
-    public boolean isBreadAndBreakfast() {
-        return breadAndBreakfast;
-    }
-
-    /**
-     * @param breadAndBreakfast the breadAndBreakfast to set
-     */
-    public void setBreadAndBreakfast(boolean breadAndBreakfast) {
-        this.breadAndBreakfast = breadAndBreakfast;
-    }
-
-    /**
-     * @return the arrivalDate
-     */
-    public Date getArrivalDate() {
-        return arrivalDate;
-    }
-
-    /**
-     * @param arrivalDate the arrivalDate to set
-     */
-    public void setArrivalDate(Date arrivalDate) {
-        this.arrivalDate = arrivalDate;
-    }
-
-    /**
-     * @return the departureDate
-     */
-    public Date getDepartureDate() {
-        return departureDate;
-    }
-
-    /**
-     * @param departureDate the departureDate to set
-     */
-    public void setDepartureDate(Date departureDate) {
-        this.departureDate = departureDate;
+    public void setReservationDetailsList(List<ReservationDetailsDto> reservationDetailsList) {
+        this.reservationDetailsList = reservationDetailsList;
     }
 
     @Override
     public String toString() {
-        return "ReservationDto{" + "reservationId=" + reservationId + ", customerId=" + customerId + ", romCatogory=" + romCatogory + ", roomNumber=" + roomNumber + ", fullBoard=" + fullBoard + ", halfBoard=" + halfBoard + ", breadAndBreakfast=" + breadAndBreakfast + ", arrivalDate=" + arrivalDate + ", departureDate=" + departureDate + '}';
+        return "ReservationDto{" + "reservationId=" + reservationId + ", customerId=" + customerId + ", date=" + date + ", reservationDetailsList=" + reservationDetailsList + '}';
     }
 }

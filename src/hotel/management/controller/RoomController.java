@@ -41,5 +41,9 @@ public class RoomController {
     public List<RoomDto> getRoom() throws Exception{
         return roomService.getAll();
     }
+
+    public List<RoomDto> getRoomsFromSpecificCategory(String category) throws Exception{
+        return roomService.getRoomsFromSpecificCategory(category);
+    }
     
 }

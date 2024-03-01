@@ -7,42 +7,30 @@ package hotel.management.dao.custom.impl;
 import hotel.management.dao.CrudUtil;
 import hotel.management.dao.custom.ReservationDao;
 import hotel.management.entity.ReservationEntity;
-import java.sql.ResultSet;
-import java.util.ArrayList;
 import java.util.List;
 
 /**
  *
  * @author Deshini
  */
-public class ReservationDaoImpl implements ReservationDao{
+public class ReservationDaoImpl implements ReservationDao {
 
     @Override
     public boolean save(ReservationEntity t) throws Exception {
-        return CrudUtil.executeUpdate("INSERT INTO reservation VALUES (?,?,?,?,?,?,?,?,?)",
-                t.getReservationId(),
-                t.getCustomerId(),
-                t.getRoomCatogory(),
-                t.getRoomNumber(),
-                t.isFullBoard(),
-                t.isHalfBoard(),
-                t.isBreadAndBreakfast(),
-                t.getArrivalDate(),
-                t.getDepartureDate());
+        return CrudUtil.executeUpdate("INSERT INTO reservation VALUES(?,?,?,?)",
+                t.getResID(),
+                t.getCustID(),
+                t.getDate(),
+                t.getTotalPrice()
+        );
     }
 
     @Override
     public boolean update(ReservationEntity t) throws Exception {
-         return CrudUtil.executeUpdate("UPDATE reservation SET CustomerID=?, Floor=?, RoomNumber=?, FullBoard=?, HalfBoard=?, BreadAndBreakfast=?, ArrivalDate=?, DepartureDate=? WHERE ReservationID=?",
-            t.getCustomerId(),
-            t.getRoomCatogory(),
-            t.getRoomNumber(),
-            t.isFullBoard(),
-            t.isHalfBoard(),
-            t.isBreadAndBreakfast(),
-            t.getArrivalDate(),
-            t.getDepartureDate(),
-            t.getReservationId());
+        return CrudUtil.executeUpdate("UPDATE reservation set totalPrice= totalPrice - ? WHERE resId=? ",
+                t.getTotalPrice(),
+                t.getResID()
+        );
     }
 
     @Override
@@ -52,49 +40,12 @@ public class ReservationDaoImpl implements ReservationDao{
 
     @Override
     public ReservationEntity get(String id) throws Exception {
-        ResultSet rst = CrudUtil.executeQuery("SELECT * FROM reservation WHERE ReservationID = ?", id);
-        ReservationEntity reservationEntity = null;
-
-        if (rst.next()) {
-            reservationEntity = new ReservationEntity(
-                    rst.getString("ReservationID"),
-                    rst.getString("CustomerID"),
-                    rst.getString("RoomCatogory"),
-                    rst.getString("RoomNumber"),
-                    rst.getBoolean("FullBoard"),
-                    rst.getBoolean("HalfBoard"),
-                    rst.getBoolean("BreadAndBreakfast"),
-                    rst.getTimestamp("ArrivalDate"),
-                    rst.getTimestamp("DepartureDate"));
-        }
-        
-        // Close the ResultSet
-        if (rst != null) {
-            rst.close();
-        }
-
-        return reservationEntity;
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
     @Override
     public List<ReservationEntity> getAll() throws Exception {
-        try (ResultSet rst = CrudUtil.executeQuery("SELECT * FROM reservation")) {
-            List<ReservationEntity> reservationEntities = new ArrayList<>();
-
-            while (rst.next()) {
-                reservationEntities.add(new ReservationEntity(
-                        rst.getString("ReservationID"),
-                        rst.getString("CustomerID"),
-                        rst.getString("RoomCatogory"),
-                        rst.getString("RoomNumber"),
-                        rst.getBoolean("FullBoard"),
-                        rst.getBoolean("HalfBoard"),
-                        rst.getBoolean("BreadAndBreakfast"),
-                        rst.getTimestamp("ArrivalDate"),
-                        rst.getTimestamp("DepartureDate")));
-            }
-            return reservationEntities;
-        }
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
-    
+
 }
